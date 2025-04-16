@@ -1,0 +1,181 @@
+-- CRUCIFIX NORMAL SPAWN
+
+coroutine.wrap(function()
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+
+function spawncruxy(posy)
+
+local abc = game:GetObjects("rbxassetid://11631916882")[1]
+
+local cruxy = abc.Handle:Clone()
+
+abc:Destroy()
+
+cruxy.Parent = game.Workspace
+
+cruxy.Name = "Cruxy"
+
+cruxy.Position = posy
+
+cruxy.Anchored = true
+
+local xy = math.random(-90, 90)
+
+cruxy.CFrame = CFrame.lookAt(cruxy.Position, cruxy.Position - Vector3.new(xy, yy, zy))
+
+cruxy.Rotation = Vector3.new(0, xy, -90)
+
+local lighty = Instance.new("PointLight")
+
+lighty.Brightness = 10000
+
+lighty.Parent = cruxy
+
+lighty.Enabled = true
+
+lighty.Color = Color3.fromRGB(255,0,0)
+
+lighty.Range = 1
+
+local lightp = Instance.new("PointLight")
+
+lightp.Brightness = 3
+
+lightp.Parent = cruxy
+
+lightp.Enabled = true
+
+lightp.Color = Color3.fromRGB(0,255,255)
+
+lightp.Range = 10
+
+local prompty = Instance.new("ProximityPrompt")
+
+prompty.Name = "prompty"
+
+prompty.MaxActivationDistance = 5
+
+prompty.ObjectText = "Custom"
+
+prompty.RequiresLineOfSight = true
+
+prompty.Parent = cruxy
+
+prompty.Style = "Custom"
+
+prompty.Triggered:Connect(function()
+
+cruxy:Destroy()
+
+local shadow=game:GetObjects("rbxassetid://11631916882")[1]
+
+shadow.Parent = game.Players.LocalPlayer.Backpack
+
+local Players = game:GetService("Players")
+
+local Plr = Players.LocalPlayer
+
+local Char = Plr.Character or Plr.CharacterAdded:Wait()
+
+local Hum = Char:WaitForChild("Humanoid")
+
+local RightArm = Char:WaitForChild("RightUpperArm")
+
+local LeftArm = Char:WaitForChild("LeftUpperArm")
+
+local RightC1 = RightArm.RightShoulder.C1
+
+local LeftC1 = LeftArm.LeftShoulder.C1
+
+        local function setupCrucifix(tool)
+
+        RightArm.Name = "R_Arm"
+
+        LeftArm.Name = "L_Arm"
+
+        
+
+        RightArm.RightShoulder.C1 = RightC1 * CFrame.Angles(math.rad(-90), math.rad(-15), 0)
+
+        LeftArm.LeftShoulder.C1 = LeftC1 * CFrame.new(-0.2, -0.3, -0.5) * CFrame.Angles(math.rad(-125), math.rad(25), math.rad(25))
+
+        for _, v in next, Hum:GetPlayingAnimationTracks() do
+
+            v:Stop()
+
+        end
+
+        end
+
+shadow.Equipped:Connect(function()
+
+setupCrucifix(shadow)
+
+game.Players.LocalPlayer:SetAttribute("Hidden", true)
+
+end)
+
+ 
+
+shadow.Unequipped:Connect(function()
+
+    game.Players.LocalPlayer:SetAttribute("Hidden", false)
+
+        RightArm.Name = "RightUpperArm"
+
+        LeftArm.Name = "LeftUpperArm"
+
+        
+
+        RightArm.RightShoulder.C1 = RightC1
+
+        LeftArm.LeftShoulder.C1 = LeftC1
+
+end)
+
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption('You grab the crucifix.',true)
+
+wait(3)
+
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption('It has a text on the back: "Made in China"',true)
+
+wait(3)
+
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption('It only works with custom entities.',true)
+
+end)
+
+--
+
+end
+
+--
+
+local lastroom = game:GetService("ReplicatedStorage").GameData.LatestRoom.Value
+
+for _, v in next, game.Workspace.CurrentRooms[lastroom].Assets:GetDescendants() do
+
+    if v.Name == "Table" then
+
+        local randomy = math.random(1, 2)
+
+            if randomy == 1 then
+
+        local positio = v.Main.Position + Vector3.new(0, 1.8, 0)
+
+        spawncruxy(positio)
+
+            end
+
+    end
+
+end
+
+--
+
+end)
+
+end)()
+
+--
