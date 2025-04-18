@@ -149,7 +149,7 @@ local achievementGiver = loadstring(game:HttpGet("https://raw.githubusercontent.
 
 ---====== Display achievement ======---
 achievementGiver({
-    Title = "	Crucifix China",
+    Title = "Crucifix China",
     Desc = "You grab a crucifix",
     Reason = "Lucky",
     Image = "rbxassetid://115918959349180"
