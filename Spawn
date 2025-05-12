@@ -121,7 +121,7 @@ for _, v in next, game.Workspace.CurrentRooms[lastroom].Assets:GetDescendants() 
 
     if v.Name == "Table" then
 
-        local randomy = math.random(1, 100)
+        local randomy = math.random(1, 95)
 
             if randomy == 1 then
 
