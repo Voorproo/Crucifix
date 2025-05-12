@@ -96,40 +96,6 @@ local LeftC1 = LeftArm.LeftShoulder.C1
 
         LeftArm.LeftShoulder.C1 = LeftC1 * CFrame.new(-0.2, -0.3, -0.5) * CFrame.Angles(math.rad(-125), math.rad(25), math.rad(25))
 
-        for _, v in next, Hum:GetPlayingAnimationTracks() do
-
-            v:Stop()
-
-        end
-
-        end
-
-shadow.Equipped:Connect(function()
-
-setupCrucifix(shadow)
-
-game.Players.LocalPlayer:SetAttribute("Hidden", true)
-
-end)
-
- 
-
-shadow.Unequipped:Connect(function()
-
-    game.Players.LocalPlayer:SetAttribute("Hidden", false)
-
-        RightArm.Name = "RightUpperArm"
-
-        LeftArm.Name = "LeftUpperArm"
-
-        
-
-        RightArm.RightShoulder.C1 = RightC1
-
-        LeftArm.LeftShoulder.C1 = LeftC1
-
-end)
-
 require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption('You grab the crucifix.',true)
 
 wait(3)
