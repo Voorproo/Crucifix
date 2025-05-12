@@ -70,8 +70,6 @@ cruxy:Destroy()
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/penguinManiack/Crucifix/main/Crucifix.lua'))()
 
-local Players = game:GetService("Players")
-
 local Plr = Players.LocalPlayer
 
 local Char = Plr.Character or Plr.CharacterAdded:Wait()
