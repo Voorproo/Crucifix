@@ -68,9 +68,7 @@ prompty.Triggered:Connect(function()
 
 cruxy:Destroy()
 
-local shadow=game:GetObjects("rbxassetid://11631916882")[1]
-
-shadow.Parent = game.Players.LocalPlayer.Backpack
+loadstring(game:HttpGet('https://raw.githubusercontent.com/penguinManiack/Crucifix/main/Crucifix.lua'))()
 
 local Players = game:GetService("Players")
 
