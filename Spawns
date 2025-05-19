@@ -69,6 +69,15 @@ prompty.Triggered:Connect(function()
 cruxy:Destroy()
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/penguinManiack/Crucifix/main/Crucifix.lua'))()
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption('You grab the crucifix.',true)
+
+wait(3)
+
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption('It has a text on the back: "Made in China"',true)
+
+wait(3)
+
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption('It only works with custom entities.',true)
 
 local Plr = Players.LocalPlayer
 
@@ -96,15 +105,6 @@ local LeftC1 = LeftArm.LeftShoulder.C1
 
         LeftArm.LeftShoulder.C1 = LeftC1 * CFrame.new(-0.2, -0.3, -0.5) * CFrame.Angles(math.rad(-125), math.rad(25), math.rad(25))
 
-require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption('You grab the crucifix.',true)
-
-wait(3)
-
-require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption('It has a text on the back: "Made in China"',true)
-
-wait(3)
-
-require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption('It only works with custom entities.',true)
 end
 
 end)
